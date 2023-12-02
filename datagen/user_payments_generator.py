@@ -26,7 +26,7 @@ def main():
             f"INSERT INTO public.user (id, name, email, address) VALUES ('{user_id}','{fake.name()}','{fake.email()}','{fake.address()}');"
         )
 
-        for i in range(random.randint(5, 15)):
+        for _ in range(random.randint(5, 15)):
             cur.execute(
                 f"INSERT INTO public.payment (id, user_id, amount) VALUES ('{uuid.uuid4().hex}','{user_id}','{random.randint(1, 100)}');"
             )
